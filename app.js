@@ -4,8 +4,11 @@ const mongoose = require('mongoose');
 const cors = require('cors')
 const app = express();
 const cookieParser = require('cookie-parser')
-
-app.use(cors())
+const corsOptions = {
+    origin: '*',
+    credentials: true
+};
+app.use(cors(corsOptions))
 
 dotenv.config({ path: './config.env' });
 
